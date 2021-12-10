@@ -1,0 +1,119 @@
+Average Degree:
+  desc: Average degree of all vertices
+  eq: 2|E|/|V|
+  type: graph based 
+  impl: 
+  cite:
+
+Diameter:
+  desc: Length of longest shortest path
+  eq: max_{v,u \epsilon V}(d(v,u))
+  type: graph based
+  impl: 
+  cite:
+
+Minimum Degree:
+  desc: Minimum number of neighbors
+  eq: min_{i \epsilon V}{|N(i)|}
+  type: graph based
+  impl:
+  cite:
+
+Maximum Degree:
+  desc: Maximum number of neighbors
+  eq: max_{i \epsilon V}{|N(i)|}
+  type: graph based
+  impl:
+  cite:
+
+Degree Centrality:
+  desc: Number of neighbors of a vertex
+  eq: C_{deg}(i) = |N(i)| = d(i)
+  type: vertex based
+  impl:
+  cite: "R. A. Hanneman and M. Riddle. 2005. Introduction to social network methods. University of California, Riverside,
+Chapter Chapter 10: Centrality and power."
+
+In/Out Degree Centralities:
+  desc: Number of neighbors of a vertex
+  eq: C_{indeg}(i) = d_{in}(i), C_{outdeg}(i) = d_{out}(i)
+  type: vertex based
+  impl:
+  cite: "S. Wasserman and K. Faust. 1994. Social network analysis: methods and applications. Vol. 8. Cambridge U. press"
+
+
+Betweenness Centrality:
+  desc: Centrality measure based on the percentage of shortest paths passing through the node
+  eq: C_{btw}(i) = \sum_{s,t \epsilon V} \sigma(s,t | i) / \sigma(s,t)
+  type: vertex based
+  impl:
+  cite: "L. Freeman. A Set of Measures of Centrality Based Upon Betweenness. In Sociometry 40, p. 35-41, 1977"
+
+K-Betweenness Centrality:
+  desc: Approximation of betweenness centrality using only paths of length k or less
+  eq: C_{k-btw}(i) = \sum_{s,t \epsilon V, d(s,t) < k} \sigma(s,t | i) / \sigma(s,t)
+  type: vertex based
+  impl:
+  cite: "M. Ercsey-Ravasz and Z. Toroczkai. 2010. Centrality scaling in large networks. Phy. Rev. Lett. 105, 3 (2010), 038701."
+
+Closeness Centrality:
+  desc:  The reciprocal of farness, or the inverse proportion of the average distance to all other nodes in the network
+  eq: C_{cls}(i) = 1/\sum_{j \epsilon V} d(i,j)
+  type: vertex based
+  impl: 
+  cite: "A. Bavelas. 1950. Communication patterns in task-oriented groups. The Journal of the Acoustical Society of America
+22, 6 (1950), 725–730."
+
+K-Closeness Centrality:
+  desc: Approximation of closeness centrality using only paths of length k or less
+  eq: C_{k-cls}(i) = 1/\sum_{j \epsilon V, d(i,j)<k} d(i,j)
+  type: vertex based
+  impl: 
+  cite:
+
+Eigenvector Centrality:
+  desc: Each node has proportional value to the sum of the score its neighbors.
+  eq: C_{eig}(i) = \lambda^{-1} \sum_{j \epsilon V} A_{ij} \upsilon_j
+  type: vertex based
+  impl:
+  cite: "P.  Bonacich,  P.  Llyod.  Eigenvector-like  Measure  of  Centrality  for  Asymmetric  Relations.  In 
+Social Networks Vol. 23, Issue 3, p. 191-201, July 2001"
+
+Katz Centrality:
+  desc: Each node has given small amount of centrality “for free” regardless of its position in the network
+  eq: C_{katz}(i) = \alpha \sum_{j \epsilon V} (A_{ij} \upsilon_j) + \beta
+  type: vertex based
+  impl:
+  cite: "M.E.J. Newman. Network:  An  Introduction.  University of Michigan and Santa Fe Institute. Oxford 
+University Press, 2010"
+
+PageRank Centrality:
+  desc: Each node has given the rank based on network neighbors proportional to their centrality divided by their out-degree
+  eq:  C_{pagerank}(i) = \alpha \sum_{j \epsilon V} (A_{ij} \upsilon_j / d_{out}(i)) + \beta
+  type: vertex based
+  impl: 
+  cite: "S. Brin, L. Rage, The Anatomy of Large Scale Hypertextual (Web) Search Engine. In Procedding of 
+The Seventh International Conferenceon the World Wide Web, 1998"
+
+Sum of Degrees:
+  desc: Sum of the degrees of the two vertices at either end of the edge
+  eq: "|N(i)| + |N(j)|"
+  type: edge based
+  impl: 
+  cite:
+
+Hubs & Authority:
+  desc: "Authority is a node that contain useful information on topic of interest, while Hub is a node that tells us where the best authority to be found."
+  eq: M_{hub}(i) = \alpha \sum_j A_{ij} M_{auth}(j), M_{auth}(i) = \beta \sum_j A_{ij} M_{hub}(j)
+  type: vertex based
+  impl: "https://networkx.org/documentation/stable/_modules/networkx/algorithms/link_analysis/hits_alg.html#hits"
+  cite: "Jon M. K. 1999. Authoritative sources in a hyperlinked environment. J. ACM 46, 5 (Sep. 1999), 604–632."
+
+Volume Centrality:
+  desc: "Centrality based on the degrees of neighbors within a certain reach (say k)"
+  eq: C_{volume}(i) = \sum_{j \epsilon N(i), d(i,j)<k} d(j)
+  type: vertex based
+  impl:
+  cite: "H. Kim and E. Yoneki. 2012. Influential neighbours selection for information diffusion in online social networks. In
+2012 21st International Conference on Computer Communications and Networks (ICCCN). 1–7."
+

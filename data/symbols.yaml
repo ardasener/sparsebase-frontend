@@ -1,0 +1,27 @@
+E: set of edges
+V: set of vertices
+A: adjacency matrix
+\alpha: constant
+\beta: constant
+\upsilon: leading eigenvector
+d(x,y): 
+  desc: shortest path distance from vertices x to y
+  re: d\(.,.\) 
+\sigma(x,y): 
+  desc: number of shortest paths from vertices x to y
+  re: \\sigma(.,.)
+\sigma(x,y|z): 
+  desc: number of shortest paths from vertices x to y that pass through that pass through z
+  re: \\sigma(.,.|.)
+N(x):
+  desc: neighborhood of vertex x
+  re: N(.)
+d(x):
+  desc: degree of x (number of neighbors of x)
+  re: d(.)
+d_{out}(x):
+  desc: out degree of x (number of outgoing edges of x)
+  re: d_{out}(.)
+d_{in}(x):
+  desc: in degree of x (number of incomming edges of x)
+  re: d_{in}(.)
