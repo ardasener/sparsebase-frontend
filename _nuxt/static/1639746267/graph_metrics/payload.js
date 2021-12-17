@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/graph_metrics", {data:[{}],fetch:{},mutations:void 0});
