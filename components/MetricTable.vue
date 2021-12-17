@@ -25,7 +25,7 @@
             ></vue-mathjax>
             <v-list class="m-2" v-if="item.symbols">
               <v-list-item class="text-center align-center justify-center" v-for="symbol in item.symbols" :key="symbol">
-                <vue-mathjax :formula="'$$ ' + symbol + ' $$'"></vue-mathjax>: {{symbols[symbol].desc}}
+                <vue-mathjax :formula="'$$ ' + symbol + ' $$'"></vue-mathjax>: {{symbols[symbol].desc? symbols[symbol].desc : symbols[symbol]}}
               </v-list-item>
             </v-list>
           </div>
@@ -59,9 +59,9 @@ for (var key in metrics) {
     if (symbols[symbol].re) {
       if (obj.eq.match(symbols[symbol].re)) {
         obj.symbols.push(symbol)
-      } else if (obj.eq.includes(symbol)) {
-        obj.symbols.push(symbol)
       }
+    } else if(obj.eq.includes(symbol)) {
+      obj.symbols.push(symbol)
     }
   }
   processed_metrics.push(obj)
