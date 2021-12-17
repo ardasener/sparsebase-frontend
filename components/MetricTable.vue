@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import metrics from 'js-yaml-loader!../data/metrics.yaml'
-import symbols from 'js-yaml-loader!../data/symbols.yaml'
+import metrics from 'js-yaml-loader!../data/graph_metrics.yaml'
+import symbols from 'js-yaml-loader!../data/graph_symbols.yaml'
 import { VueMathjax } from 'vue-mathjax'
 
 var processed_metrics = []
@@ -126,4 +126,3 @@ export default {
   },
 }
 </script>
-    

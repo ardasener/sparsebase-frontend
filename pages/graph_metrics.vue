@@ -1,6 +1,6 @@
 <template>
   <div>
-      <metric-table class="m-2"></metric-table>
+      <metric-table class="m-5"></metric-table>
   </div>
 </template>
 
