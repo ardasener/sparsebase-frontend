@@ -11,7 +11,7 @@ d(x,y):
   desc: number of shortest paths from vertices x to y
   re: \\sigma\(.,.\)
 \sigma(x,y|z):
-  desc: number of shortest paths from vertices x to y that pass through that pass through z
+  desc: number of shortest paths from vertices x to y that pass through z
   re: \\sigma\(.,.|.\)
 N(x):
   desc: neighborhood of vertex x

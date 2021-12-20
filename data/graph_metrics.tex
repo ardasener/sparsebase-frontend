@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{adjustbox}
+\begin{document}
+
+\begin{table}
+
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{c|c|c|c|c}
+Average Degree & Average degree of all vertices & $ 2|E|/|V| $ & - & - \\ 
+Diameter & Length of longest shortest path & $ max_{v,u \epsilon V}(d(v,u)) $ & - & - \\ 
+Minimum Degree & Minimum number of neighbors & $ min_{i \epsilon V}{|N(i)|} $ & - & - \\ 
+Maximum Degree & Maximum number of neighbors & $ max_{i \epsilon V}{|N(i)|} $ & - & - \\ 
+Degree Centrality & Number of neighbors of a vertex & $ C_{deg}(i) = |N(i)| = d(i) $ & R. A. Hanneman and M. Riddle. 2005. Introduction to social network methods. University of California, Riverside, Chapter Chapter 10: Centrality and power. & - \\ 
+In/Out Degree Centralities & Number of neighbors of a vertex & $ C_{indeg}(i) = d_{in}(i), C_{outdeg}(i) = d_{out}(i) $ & S. Wasserman and K. Faust. 1994. Social network analysis: methods and applications. Vol. 8. Cambridge U. press & - \\ 
+Betweenness Centrality & Centrality measure based on the percentage of shortest paths passing through the node & $ C_{btw}(i) = \sum_{s,t \epsilon V} \sigma(s,t | i) / \sigma(s,t) $ & L. Freeman. A Set of Measures of Centrality Based Upon Betweenness. In Sociometry 40, p. 35-41, 1977 & - \\ 
+K-Betweenness Centrality & Approximation of betweenness centrality using only paths of length k or less & $ C_{k-btw}(i) = \sum_{s,t \epsilon V, d(s,t) < k} \sigma(s,t | i) / \sigma(s,t) $ & M. Ercsey-Ravasz and Z. Toroczkai. 2010. Centrality scaling in large networks. Phy. Rev. Lett. 105, 3 (2010), 038701. & - \\ 
+Closeness Centrality & The reciprocal of farness, or the inverse proportion of the average distance to all other nodes in the network & $ C_{cls}(i) = 1/\sum_{j \epsilon V} d(i,j) $ & A. Bavelas. 1950. Communication patterns in task-oriented groups. The Journal of the Acoustical Society of America 22, 6 (1950), 725–730. & - \\ 
+K-Closeness Centrality & Approximation of closeness centrality using only paths of length k or less & $ C_{k-cls}(i) = 1/\sum_{j \epsilon V, d(i,j)<k} d(i,j) $ & - & - \\ 
+Eigenvector Centrality & Each node has proportional value to the sum of the score its neighbors. & $ C_{eig}(i) = \lambda^{-1} \sum_{j \epsilon V} A_{ij} \upsilon_j $ & P.  Bonacich,  P.  Llyod.  Eigenvector-like  Measure  of  Centrality  for  Asymmetric  Relations.  In Social Networks Vol. 23, Issue 3, p. 191-201, July 2001 & - \\ 
+Katz Centrality & Each node has given small amount of centrality “for free” regardless of its position in the network & $ C_{katz}(i) = \alpha \sum_{j \epsilon V} (A_{ij} \upsilon_j) + \beta $ & M.E.J. Newman. Network:  An  Introduction.  University of Michigan and Santa Fe Institute. Oxford University Press, 2010 & - \\ 
+PageRank Centrality & Each node has given the rank based on network neighbors proportional to their centrality divided by their out-degree & $ C_{pagerank}(i) = \alpha \sum_{j \epsilon V} (A_{ij} \upsilon_j / d_{out}(i)) + \beta $ & S. Brin, L. Rage, The Anatomy of Large Scale Hypertextual (Web) Search Engine. In Procedding of The Seventh International Conferenceon the World Wide Web, 1998 & - \\ 
+Sum of Degrees & Sum of the degrees of the two vertices at either end of the edge & $ |N(i)| + |N(j)| $ & - & - \\ 
+Hubs \& Authority & Authority is a node that contain useful information on topic of interest, while Hub is a node that tells us where the best authority to be found. & $ M_{hub}(i) = \alpha \sum_j A_{ij} M_{auth}(j), M_{auth}(i) = \beta \sum_j A_{ij} M_{hub}(j) $ & Jon M. K. 1999. Authoritative sources in a hyperlinked environment. J. ACM 46, 5 (Sep. 1999), 604–632. & https://networkx.org/documentation/stable/_modules/networkx/algorithms/link_analysis/hits_alg.html#hits \\ 
+Volume Centrality & Centrality based on the degrees of neighbors within a certain reach (say k) & $ C_{volume}(i) = \sum_{j \epsilon N(i), d(i,j)<k} d(j) $ & H. Kim and E. Yoneki. 2012. Influential neighbours selection for information diffusion in online social networks. In 2012 21st International Conference on Computer Communications and Networks (ICCCN). 1–7. & -
+\end{tabular}
+
+\end{table}
+
+\clearpage
+
+
+\begin{table}
+
+\adjustbox{max width=\textwidth}{%
+\begin{tabular}{c|c}
+E & set of edges \
+V & set of vertices \
+A & adjacency matrix \
+\alpha & constant \
+\beta & constant \
+\upsilon & leading eigenvector \
+d(x,y) & shortest path distance from vertices x to y \
+\sigma(x,y) & number of shortest paths from vertices x to y \
+\sigma(x,y|z) & number of shortest paths from vertices x to y that pass through that pass through z \
+N(x) & neighborhood of vertex x \
+d(x) & degree of x (number of neighbors of x) \
+d_{out}(x) & out degree of x (number of outgoing edges of x) \
+d_{in}(x) & in degree of x (number of incomming edges of x)
+\end{tabular}
+
+\end{table}
+
+\end{document}
